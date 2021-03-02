@@ -22,7 +22,7 @@ export class PersonasComponent {
   getPersonas() {
     this.personasService.getAllPersonas().subscribe(
       (result) => {
-        this.personas = result.persona;
+        this.personas = result;
       },
       (err) => {
         console.log(JSON.stringify(err));
