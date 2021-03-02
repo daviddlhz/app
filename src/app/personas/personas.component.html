@@ -1,0 +1,65 @@
+<h1>{{ nombre }}</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <table class="table">
+        <thead>
+          <th>ID</th>
+          <th>NOMBRES</th>
+          <th>APELLIDOS</th>
+          <th>DOCUMENTO</th>
+          <th>TELEFONO</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of personas">
+            <td>{{ item.id }}</td>
+            <td>{{ item.nombres }}</td>
+            <td>{{ item.apellidos }}</td>
+            <td>{{ item.documento }}</td>
+            <td>{{ item.telefono }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-4">
+      <h3>Formulario</h3>
+      <div class="form-group">
+        <label for="controlNombre">Nombres</label>
+        <input
+          type="text"
+          [(ngModel)]="addPerson.nombres"
+          class="form-control"
+          placeholder="Nombres de persona"
+        />
+      </div>
+      <div class="form-group">
+        <label for="controlApellido">Apellido</label>
+        <input
+          type="text"
+          [(ngModel)]="addPerson.apellidos"
+          class="form-control"
+          placeholder="Apellidos de persona"
+        />
+      </div>
+      <div class="form-group">
+        <label for="controlDocumento">Documento</label>
+        <input
+          type="text"
+          [(ngModel)]="addPerson.documento"
+          class="form-control"
+          placeholder="Documento"
+        />
+      </div>
+      <div class="form-group">
+        <label for="controlTelefono">Telefono</label>
+        <input
+          type="text"
+          [(ngModel)]="addPerson.telefono"
+          class="form-control"
+          placeholder="Telefono"
+        />
+      </div>
+      <button (click)="savePersona()" class="btn btn-primary">Agregar</button>
+    </div>
+  </div>
+</div>
